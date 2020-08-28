@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Scrolling Project</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar-wrapper">
+            <img src="./logo.png" alt="logo">
+            <ul class="links-list">
+                <li class="link-item"><a href="#home" class="scroll-link">Home</a></li>
+                <li class="link-item"><a href="#about" class="scroll-link">About</a></li>
+                <li class="link-item"><a href="#lectures" class="scroll-link">Lectures</a></li>
+                <li class="link-item"><a href="#tours" class="scroll-link">Tours</a></li>
+            </ul>
+            <button type="button" class="nav-toggle"><i class="fa fa-bars"></i></button>
+        </nav>
+        <!-- Banner image -->
+        <img class="banner-img" id="home" src="./bg-img.jpg" alt="background img">
+
+        <!-- Content -->
+        <div class="content-wrapper">
+            <!-- About us -->
+            <section class="about" id="about">
+                <h2 class="link-heading">About Us</h2>
+            </section>
+            <!-- Lectures -->
+            <section class="lectures" id="lectures">
+                <h2 class="link-heading">Lectures</h2>
+            </section>
+            <!-- Tours -->
+            <section class="tours" id="tours">
+                <h2 class="link-heading">Tours</h2>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer-wrapper">
+            <h3 class="footer-text">Copyright &copy; All Rights Reserved <span id="date"></span></h3>
+        </footer>
+
+        <!-- Back to top Button -->
+        <a href="#home" class="top-link scroll-link">
+            <i class="fa fa-arrow-up"></i>
+        </a>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

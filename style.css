@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-primary: rgb(56, 113, 188);
+    --nav-height: 7rem;
+}
+
+html {
+    /* does not work on it's on --> see main.js */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 62.5%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* NAVBAR */
+.navbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--nav-height);
+    width: 100vw;
+    padding: 3rem;
+}
+
+.navbar-wrapper img {
+    width: 4.5rem;
+    margin: .5rem 0;
+    margin-left: 1rem;
+}
+
+.links-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin-right: 1rem;
+    width: 63%;
+}
+
+.link-item {
+}
+
+.link-item a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+.link-item a::after {
+    content:"";
+    position: absolute;
+    width: 80%;
+    height: 3px;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(0,0,0);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.link-item a:hover::after {
+    opacity: 1;
+}
+
+.nav-toggle {
+    display: none;
+    border: none;
+    background-color: #fff;
+    padding: .3rem;
+    border-radius: .3rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.nav-toggle i {
+    font-size: 2rem;
+}
+.nav-toggle:hover{
+    transform: rotateZ(-90deg);
+    color: var(--clr-primary);
+    background-color: black;
+}
+
+@media (max-width: 600px){
+    .nav-toggle {
+        display: inline-block;
+    }
+    .links-list {
+        display: none;
+    }
+}
+
+.show-links .links-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.show-links .link-item {
+    width: 100%;
+    padding: .5rem;
+    padding-left: 3rem;
+    background-color: #fff;
+    transition: all 0.5s ease;
+}
+.show-links .link-item:hover {
+    background-color: var(--clr-primary);
+}
+.show-links .link-item a::after {
+    display: none;
+}
+
+/* .link-item:nth-child(1) {
+    transition: opacity 0.5s ease 0.2s;
+}
+.link-item:nth-child(2) {
+    transition: opacity 0.5s ease 0.4s;
+}
+.link-item:nth-child(3) {
+    transition: opacity 0.5s ease 0.6s;
+}
+.link-item:nth-child(4) {
+    transition: opacity 0.5s ease 0.8s;
+} */
+
+/* BANNER IMG */
+.banner-img {
+    width: 100%;
+    height: 30rem;
+}
+
+@media (max-width:600px){
+    .banner-img {
+        width: 90%;
+        height: 15rem;
+    }
+}
+
+/* CONTENT */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.content-wrapper section {
+    height: 23rem;
+}
+
+.content-wrapper .about,
+.content-wrapper .tours {
+    background-color: #eee;
+}
+
+.link-heading {
+    font-size: 3rem;
+    background-color: var(--clr-primary);
+    text-align: center;
+    width: 100vw;
+}
+
+/* FOOTER */
+.footer-wrapper {
+    width: 100%;
+    height: 5rem;
+    background-color: var(--clr-primary);
+    position: relative;
+}
+
+.footer-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.3rem;
+}
+
+/* BACK TO TOP BUTTON */
+.top-link {
+    visibility: hidden;
+}
+.top-link i {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    font-size: 2rem;
+    padding: .3rem;
+    border-radius: .5rem;
+    color: #eee;
+    background-color: rgb(14, 197, 90);
+    transition: all 0.3s ease;
+}
+
+.top-link i:hover {
+    transform: scale(1.02) translate(.3rem, .3rem);
+    color: rgb(14, 197, 90);
+    background-color: #eee;
+    border: 5px solid rgb(14, 197, 90);
+}
+
+.show-top-link {
+    visibility: visible;
+    /* z-index: 10; */
+}
+
+/* SCROLLING NAV */
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+
+
